@@ -1,5 +1,5 @@
 # CAD_Jupyter
-A Multiuser CAD solution including CAE-to-FEM workflow and live in-browser 3d previews. Docker based, Python3 Focused utilizing Conda, CadQuery, FEniCS, PETSc, TopOpt, PythonOCC, JupyterHub, JupyterLab.
+A Multiuser CAE solution including CAD-to-FEM workflow and live in-browser 3d previews. Docker based, Python3 Focused utilizing Conda, CadQuery, FEniCS, PETSc, TopOpt, PythonOCC, JupyterHub, JupyterLab.
 
 This is ***a local team environment*** meaning one file system for all instance users. An instance is contained inside a docker container (so only folders that you explicitly provide will be visible to it). 
 
@@ -12,6 +12,8 @@ Environment includes:
 Note that as any real CAE software docker image file is big and requires at least **17GB** and needs more than **1 hour** for installation.
 
 ## Install
+
+# Interface
 
 1) get code:
 ```bash
@@ -41,6 +43,64 @@ with admin user password `Scientific`
 ```bash
  docker run -d -p 8890:8892  -e USER_PASS=Scientific -d /full/path/to/a/shared/folder:/opt/notebook/ spbu/cae:latest
 ```
+
+# FEniCS
+
+1) First check that Docker is working:
+```bash
+docker run hello-world
+```
+
+You should see a message saying that your Docker installation is working correctly.
+
+2) Pull the quay.io/fenicsproject/stable image:
+```bash
+docker pull quay.io/fenicsproject/stable:latest
+```
+
+3) Start FEniCS, run:
+```bash
+docker run -ti quay.io/fenicsproject/stable:latest
+```
+4) You will be presented with a prompt where you can run FEniCS:
+```bash
+fenics@0521831b5f28:~$
+```
+fenics is your username inside the container and the number 0521831b5f28 is the CONTAINER ID that Docker has assigned. This ID is unique to your computer and this container and will be different to the one above.
+
+5) Run the DOLFIN poisson.py example using:
+```bash
+cd ~/demo/documented/poisson/python
+python3 demo_poisson.py
+```
+The results will be outputted to the file poisson.pvd in the same directory. 
+
+# PETSc
+
+1) Enter the PETSc directory:
+```bash
+cd PETSc/
+```
+
+2) Install and configure (MPI and BLAS/LAPACK should already be installed):
+```bash
+./configure
+make all check
+```
+
+# TopOpt
+
+1) This code requires the following external software to work:
+
+ - PETSc version 3.11.4 or earlier (though never than 3.8.x)
+ - LAPACK/BLAS
+ - MPI
+
+2) Compile following rules in makefile_ref
+
+3) Normal compilation time of framework, e.g. 4s: "make topopt -j"
+
+4) Run the base example by typing e.g.: "mpirun -np 4 ./topopt"
 
 ## Login
 On navigating to it you shall see login screen:
