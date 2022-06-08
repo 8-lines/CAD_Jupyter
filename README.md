@@ -11,9 +11,9 @@ Environment includes:
 
 Note that as any real CAE software docker image file is big and requires at least **17GB** and needs more than **1 hour** for installation.
 
-## Install
+# Install
 
-# Interface
+## Interface
 
 1) get code:
 ```bash
@@ -44,7 +44,7 @@ with admin user password `Scientific`
  docker run -d -p 8890:8892  -e USER_PASS=Scientific -d /full/path/to/a/shared/folder:/opt/notebook/ spbu/cae:latest
 ```
 
-# FEniCS
+## FEniCS
 
 1) First check that Docker is working:
 ```bash
@@ -75,7 +75,7 @@ python3 demo_poisson.py
 ```
 The results will be outputted to the file poisson.pvd in the same directory. 
 
-# PETSc
+## PETSc
 
 1) Enter the PETSc directory:
 ```bash
@@ -88,7 +88,7 @@ cd PETSc/
 make all check
 ```
 
-# TopOpt
+## TopOpt
 
 1) This code requires the following external software to work:
 
