@@ -117,7 +117,7 @@ sudo useradd --create-home --no-log-init --shell /bin/bash -g users test
 ```
 6) Provide user with login and JupyterHub website addres. On his first entrence what ever he will write as a `password` will be saved as his password.
 
-### Cite Articles
+## Cite Articles
  - [Development of a tool for interactive detailing of areas of objects for the strength modeling system. / Budlov E., Iakushkin O., Sedova O., Gogotov A.](http://ceur-ws.org/Vol-3041/101-105-paper-18.pdf) (OpenAccess)
  - [Creating A Tool For Stress Computation With Respect To Surface Defects. / Sedova, O.; Iakushkin O.; Kondratiuk. A.](http://ceur-ws.org/Vol-2507/371-375-paper-68.pdf) (OpenAccess)
  - [Jupyter extension for creating CAD designs and their subsequent analysis by the finite element method. / Iakushkin, O.; Sedova, O.; Grishkin, V. In: CEUR Workshop Proceedings, Vol. 1787, 2016, p. 530-534.](http://ceur-ws.org/Vol-1787/530-534-paper-92.pdf) (OpenAccess)
