@@ -1,14 +1,15 @@
 # CAD_Jupyter
-A Multiuser CAE solution including CAD-to-FEM workflow and live in-browser 3d previews. Docker based, Python3 Focused utilizing Conda, CadQuery, FEniCS, PythonOCC, JupyterHub, JupyterLab.
+A Multiuser CAE solution including CAD-to-FEM workflow and live in-browser 3d previews. Docker based, Python3 Focused utilizing Conda, CadQuery, FEniCS, PETSc, TopOpt, PythonOCC, JupyterHub, JupyterLab.
 
 This is ***a local team environment*** meaning one file system for all instance users. An instance is contained inside a docker container (so only folders that you explicitly provide will be visible to it). 
 
 Environment includes:
- - **CAD** tools: *pythonocc-core* and *CadQuery*
- - **FEM** tools: *fenics-dolfin*
- - **Visualization** tools: *pyvista*, *itkwidgets* (in-browser), *mayavi* (on-server)
+ - **CAD** tools: *pythonocc-core* and *GMSH*
+ - **FEM** tools: *FEniCSx* and *PETSc*
+ - **Optimization** tools: *TopOpt*
+ - **Visualization** tools: *JupyterLab*
 
-Note that as any real CAE software docker image file is big and requires at least **17GB** 
+Note that as any real CAE software docker image file is big and requires at least **17GB** and needs more than **1 hour** for installation.
 
 ## Install
 
